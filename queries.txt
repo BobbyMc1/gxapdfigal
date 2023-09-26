@@ -1,0 +1,13 @@
+SELECT temperature, humidity, wind_speed,weather_history.location
+FROM sensor_entries
+INNER JOIN weather_history ON sensor_entries.location=weather_history.location 
+where date_and_time BETWEEN "2023-08-20" AND "2023-09-09"
+
+
+SELECT temperature, humidity, wind_speed,sensor_entries.location,weather_history.reference
+FROM sensor_entries
+INNER JOIN history ON sensorentry_id=sensor_entries.id
+INNER JOIN weather_history ON weatherhistory_id = history.weatherhistory_id
+where date_and_time BETWEEN "2023-08-20" AND "2023-09-09"
+
+
